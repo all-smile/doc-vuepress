@@ -2,6 +2,8 @@ module.exports = {
   title: "Xiao的博客",
   description: "风之积也不厚，则其负大翼也无力",
   theme: "reco",
+  // githup pages 基础路径 和仓库名相同
+  base: "/doc-vuepress/",
   themeConfig: {
     author: "xiaojuntao",
     logo: "/avatar.jpg",
