@@ -1,8 +1,12 @@
 module.exports = {
   title: "Xiao的博客",
-  description: "desc",
+  description: "风之积也不厚，则其负大翼也无力",
   theme: "reco",
   themeConfig: {
+    author: "xiaojuntao",
+    logo: "/avatar.jpg",
+    authorAvatar: "/avatar.jpg",
+    type: "blog",
     nav: [
       { text: "首页", link: "/" },
       {
@@ -16,7 +20,18 @@ module.exports = {
         ],
       },
     ],
-    sidebar: [
+    // 博客配置
+    blogConfig: {
+      category: {
+        location: 2, // 在导航栏菜单中所占的位置，默认2
+        text: "博客", // 默认文案 “分类”
+      },
+      tag: {
+        location: 4, // 在导航栏菜单中所占的位置，默认4
+        text: "Tag", // 默认文案 “标签”
+      },
+    },
+    /* sidebar: [
       {
         title: "欢迎学习",
         path: "/",
@@ -32,6 +47,11 @@ module.exports = {
           { title: "第二篇", path: "/blogs/2" },
         ],
       },
-    ],
+    ], */
+  },
+  locales: {
+    "/": {
+      lang: "zh-CN",
+    },
   },
 };
