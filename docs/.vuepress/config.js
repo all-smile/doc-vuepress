@@ -1,16 +1,33 @@
+const nodeEnv = process.env.NODE_ENV;
+console.log("process.env.NODE_ENV===>", nodeEnv); // development production
 module.exports = {
   title: "Xiao的博客",
   description: "风之积也不厚，则其负大翼也无力",
-  theme: "reco",
+  // theme: "reco", // vuepress-theme-reco
   // githup pages 基础路径 和仓库名相同
-  base: "/doc-vuepress/",
+  base: nodeEnv == "development" ? "" : "/doc-vuepress/",
   themeConfig: {
     author: "xiaojuntao",
-    logo: "/avatar.jpg",
-    authorAvatar: "/avatar.jpg",
-    type: "blog",
+    logo: "/assets/img/avatar.jpg",
+    authorAvatar: "/assets/img/avatar.jpg",
+    // type: "blog",
+    // navbar: false, // 禁用所有页面的导航栏
     nav: [
       { text: "首页", link: "/" },
+      { text: "Guide", link: "/guide/" },
+      {
+        text: "知识库",
+        items: [
+          {
+            text: "🥝偏前端开发实用技能",
+            link: "/fe-skills/",
+          },
+          {
+            text: "🎈偏前端架构运维小火慢炖",
+            link: "/fe-framework/",
+          },
+        ],
+      },
       {
         text: "xiao 的博客",
         items: [
@@ -33,6 +50,25 @@ module.exports = {
         text: "Tag", // 默认文案 “标签”
       },
     },
+    sidebar: {
+      "/fe-skills/": [
+        {
+          title: "闭包",
+          children: [
+            // ['','文章推荐'],
+            ["test", "test"],
+          ],
+        },
+        {
+          title: "作用域",
+          children: [
+            ["test1", "测试test1"],
+            ["test2", "test2"],
+          ],
+        },
+        "only",
+      ],
+    },
     /* sidebar: [
       {
         title: "欢迎学习",
@@ -51,9 +87,16 @@ module.exports = {
       },
     ], */
   },
-  locales: {
-    "/": {
-      lang: "zh-CN",
+  // locales: {
+  //   "/": {
+  //     lang: "zh-CN",
+  //   },
+  // },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@alias": "assets",
+      },
     },
   },
 };
