@@ -4,6 +4,7 @@ module.exports = {
   title: "Xiao的博客",
   description: "风之积也不厚，则其负大翼也无力",
   // theme: "reco", // vuepress-theme-reco
+  // theme: "vdoing", // uepress-theme-vdoing
   // githup pages 基础路径 和仓库名相同
   base: nodeEnv == "development" ? "" : "/doc-vuepress/",
   themeConfig: {
@@ -12,6 +13,8 @@ module.exports = {
     authorAvatar: "/assets/img/avatar.jpg",
     // type: "blog",
     // navbar: false, // 禁用所有页面的导航栏
+    // 自动生成结构化侧边栏, 注意最多支持4级目录,切文件名前需要指定序号
+    sidebar: "structuring", //  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义
     nav: [
       { text: "首页", link: "/" },
       { text: "Guide", link: "/guide/" },
@@ -52,6 +55,7 @@ module.exports = {
     },
     sidebar: {
       "/fe-skills/": [
+        // "",
         {
           title: "闭包",
           children: [
@@ -66,36 +70,23 @@ module.exports = {
             ["test2", "test2"],
           ],
         },
-        "only",
       ],
     },
-    /* sidebar: [
-      {
-        title: "欢迎学习",
-        path: "/",
-        collapsable: false, // 是否折叠
-        children: [{ title: "博客简介", path: "/" }],
-      },
-      {
-        title: "基础篇",
-        path: "/blogs/1",
-        collapsable: true,
-        children: [
-          { title: "第一篇", path: "/blogs/1" },
-          { title: "第二篇", path: "/blogs/2" },
-        ],
-      },
-    ], */
   },
   // locales: {
   //   "/": {
   //     lang: "zh-CN",
   //   },
   // },
+  markdown: {
+    toc: {
+      includeLevel: [1, 2, 3, 4],
+    },
+  },
   configureWebpack: {
     resolve: {
       alias: {
-        "@alias": "assets",
+        "@alias": "/assets",
       },
     },
   },

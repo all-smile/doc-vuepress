@@ -7,11 +7,11 @@
 ```bash
 # 1. 安装依赖
 yarn # npm i
-yarn docs:dev # npm run docs:dev
+yarn dev # npm run dev
 ```
 
 ## 打包
 
 ```bash
-yarn docs:build # npm run docs:build
+yarn build # npm run build
 ```
