@@ -15,7 +15,7 @@ tags:
 
 开发中主要功能点的解决方案
 
-![Image from alias](~@alias/img/qrcode_wechat01.jpg)
+![Image from alias](/assets/img/qrcode_wechat01.jpg)
 
 ## test
 
