@@ -58,18 +58,15 @@ module.exports = {
         // "",
         {
           title: "闭包",
-          children: [
-            // ['','文章推荐'],
-            ["test", "test"],
-          ],
+          children: [["", "个人网站汇总导航"]],
         },
-        {
-          title: "作用域",
-          children: [
-            ["test1", "测试test1"],
-            ["test2", "test2"],
-          ],
-        },
+        // {
+        //   title: "作用域",
+        //   children: [
+        //     ["test1", "测试test1"],
+        //     ["test2", "test2"],
+        //   ],
+        // },
       ],
     },
   },
